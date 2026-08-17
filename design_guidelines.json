@@ -1,0 +1,113 @@
+{
+  "theme": "hybrid",
+  "archetype": "ORGANIC & EARTHY mixed with SWISS & HIGH-CONTRAST",
+  "typography": {
+    "headings": {
+      "font": "Playfair Display",
+      "style": "serif, tracking-tight, uppercase-optional"
+    },
+    "body": {
+      "font": "Inter",
+      "style": "sans-serif, tracking-normal"
+    },
+    "rules": "H1 up to text-6xl clamp. No center alignment for body text. Dense typography. Playfair Display for editorial massive headings."
+  },
+  "colors": {
+    "background": "#FAF8F5",
+    "text": "#111215",
+    "accent": "#1D4ED8",
+    "secondary_dark": "#14161B",
+    "border": "#E5E2DC"
+  },
+  "visual_enhancers": {
+    "borders": "Hairline borders 1px solid #E5E2DC everywhere to expose the grid math. Brutalist influence with 0px border-radius.",
+    "micro_interactions": "Fade-ins, hover floating photo cards, subtle hover effects, hover inversion (bg/text swap) for links.",
+    "animations": "Framer-motion scroll-reveals, momentum scrolling via Lenis, kinetic masked line-by-line hero reveal, one slow editorial marquee."
+  },
+  "grids": {
+    "philosophy_section": "Numbered manifesto chapters, strict grid layout.",
+    "menu_section": "Digitized interactive menu, filter tabs. Items have allergen badges. Dense list layout.",
+    "team_section": "Portrait grid with quote.",
+    "spacing": "Generous spacing. p-12 to p-32. Container borders visible forming a bento-like brutalist skeleton."
+  },
+  "layouts": {
+    "hero": "Editorial hero with big serif typographic statement + signature dish photo with hover zoom.",
+    "booking": "Sticky floating booking drawer with CoverManager iframe + phone fallback.",
+    "header": "Sticky header with logo/isotype + bilingual (CA/ES) switcher + 'Reservar Taula' pill CTA. Backdrop blur with semi-solid background.",
+    "wine_section": "Secondary dark surface (#14161B) for wine/evening section, white text."
+  },
+  "accessibility": {
+    "focus": "focus-visible outline 2px solid #1D4ED8",
+    "contrast": "Ensure dark charcoal text meets APCA on off-white bg. Cobalt blue text/button must contrast properly."
+  },
+  "media": {
+    "image_treatment": "Real product photography treated with spotlight/clipped frame styling. Hover zoom on signature dish."
+  },
+  "dependencies": [
+    "framer-motion",
+    "lucide-react",
+    "@radix-ui/react-tabs",
+    "@radix-ui/react-dialog",
+    "lenis"
+  ],
+  "image_urls": {
+    "hero_signature_dish": {
+      "url": "https://images.unsplash.com/photo-1519233991914-26a44330ccd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxjYXRhbGFuJTIwZ2FzdHJvbm9teSUyMHBsYXRlfGVufDB8fHx8MTc4NzAwMzA5OHww&ixlib=rb-4.1.0&q=85",
+      "description": "Signature Catalan gastronomy dish"
+    },
+    "chef_portrait": {
+      "url": "https://images.pexels.com/photos/4590943/pexels-photo-4590943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Chef Jordi portrait in kitchen"
+    },
+    "menu_hover_cards": [
+      {
+        "url": "https://images.unsplash.com/photo-1781115650881-bc5d55bd31d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwzfHxnb3VybWV0JTIwdGFwYXMlMjBwbGF0ZXxlbnwwfHx8fDE3ODcwMDMwOTh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Tapas preview 1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1695606452859-bb6ef0ec0b02?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxnb3VybWV0JTIwdGFwYXMlMjBwbGF0ZXxlbnwwfHx8fDE3ODcwMDMwOTh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Tapas preview 2"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1695606452994-744d28349d71?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwyfHxnb3VybWV0JTIwdGFwYXMlMjBwbGF0ZXxlbnwwfHx8fDE3ODcwMDMwOTh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Tapas preview 3"
+      }
+    ],
+    "interior_location": {
+      "url": "https://images.pexels.com/photos/2387675/pexels-photo-2387675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Modern restaurant interior"
+    },
+    "wine_section": {
+      "url": "https://images.pexels.com/photos/34335270/pexels-photo-34335270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Wine pouring glass dark background"
+    }
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN.",
+    "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing.",
+    "DO NOT use complete transparent background in header, overlays, any surface that has content under it."
+  ],
+  "instructions_to_main_agent": [
+    "Install required dependencies: yarn add framer-motion lenis @radix-ui/react-tabs lucide-react",
+    "Build the UI in App.js (or relevant component files). Implement the sections sequentially.",
+    "Apply hairline borders (#E5E2DC) around sections and grid items to create a brutalist skeleton structure.",
+    "The hero section needs framer-motion for line-by-line text reveal of a big serif statement.",
+    "Menu section should have functional tabs. Hovering on a menu signature dish row should render a floating photo card using framer-motion or fixed absolute positioning aligned with the cursor.",
+    "Booking drawer must be implemented as a Dialog/Drawer (using Radix or framer-motion) with CoverManager iframe placeholder.",
+    "Implement bilingual toggle visually (can just toggle text state or simply act as a UI element for design purposes).",
+    "Ensure the wine/evening section switches to dark mode styling (bg #14161B, text white).",
+    "Create the logo isotype: a cobalt blue circle with two abstract cream figures resembling 'ü'."
+  ]
+}
