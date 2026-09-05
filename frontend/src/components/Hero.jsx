@@ -4,10 +4,10 @@ import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const lineVariants = {
-  hidden: { y: "110%" },
+  hidden: { y: "112%" },
   visible: (i) => ({
     y: "0%",
-    transition: { duration: 1, delay: 0.15 * i, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 1.1, delay: 0.15 * i, ease: [0.16, 1, 0.3, 1] },
   }),
 };
 
@@ -15,35 +15,35 @@ export const Hero = ({ onReserve }) => {
   const { t } = useLanguage();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
     <section
       id="hero"
       ref={ref}
       data-testid="hero-section"
-      className="relative flex min-h-[100vh] items-center overflow-hidden bg-[#FAF8F5] pt-24"
+      className="relative min-h-[100vh] overflow-hidden bg-[#FAF8F5] pb-24 pt-36 lg:pb-32 lg:pt-44"
     >
       <img
         src="/brand/isotype.png"
         alt=""
-        className="pointer-events-none absolute -right-24 -top-24 h-[520px] w-[520px] opacity-[0.05] lg:h-[680px] lg:w-[680px]"
+        className="pointer-events-none absolute -right-32 -top-32 h-[560px] w-[560px] opacity-[0.04] lg:h-[760px] lg:w-[760px]"
       />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-4 lg:px-10">
-        <div className="flex flex-col justify-center">
+      <div className="relative z-10 mx-auto max-w-[1680px] px-6 lg:px-16">
+        <div className="max-w-full md:max-w-[64%] lg:max-w-[52%]">
           <motion.p
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
-            className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-[#1D4ED8]"
+            className="mb-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.32em] text-[#111215]/50"
             data-testid="hero-kicker"
           >
+            <span className="h-2 w-2 flex-shrink-0 bg-[#1D4ED8]" />
             {t.hero.kicker}
           </motion.p>
 
-          <h1 className="font-serif text-[13vw] leading-[0.98] tracking-tight text-[#111215] sm:text-6xl lg:text-[5.2vw]">
+          <h1 className="font-serif text-[15vw] leading-[0.92] tracking-[-0.03em] text-[#111215] md:text-[8.5vw] lg:text-[6.4vw]">
             {t.hero.lines.map((line, i) => (
               <span key={i} className="block overflow-hidden">
                 <motion.span
@@ -63,8 +63,8 @@ export const Hero = ({ onReserve }) => {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.7 }}
-            className="mt-8 max-w-md text-base text-[#111215]/70 lg:text-lg"
+            transition={{ delay: 1, duration: 0.7 }}
+            className="mt-10 max-w-sm text-sm leading-relaxed text-[#111215]/60 lg:text-base"
             data-testid="hero-subtitle"
           >
             {t.hero.subtitle}
@@ -73,20 +73,20 @@ export const Hero = ({ onReserve }) => {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.05, duration: 0.7 }}
-            className="mt-10 flex items-center gap-6"
+            transition={{ delay: 1.2, duration: 0.7 }}
+            className="mt-14 flex items-center gap-8"
           >
             <button
               data-testid="hero-reserve-button"
               onClick={onReserve}
-              className="rounded-full bg-[#1D4ED8] px-8 py-4 font-sans text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
+              className="rounded-full bg-[#1D4ED8] px-9 py-4 font-sans text-sm font-medium text-white transition-transform hover:scale-[1.03] active:scale-[0.98]"
             >
               {t.hero.cta}
             </button>
             <button
               data-testid="hero-scroll-hint"
               onClick={() => document.getElementById("filosofia")?.scrollIntoView({ behavior: "smooth" })}
-              className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-[#111215]/60 hover:text-[#1D4ED8]"
+              className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.25em] text-[#111215]/45 hover:text-[#1D4ED8]"
             >
               {t.hero.scroll}
               <motion.span animate={{ y: [0, 4, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
@@ -96,23 +96,34 @@ export const Hero = ({ onReserve }) => {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 1 }}
-          className="relative aspect-[4/5] w-full overflow-hidden border border-[#E5E2DC]"
-          data-testid="hero-dish-frame"
-        >
-          <motion.img
+        <div className="mt-20 md:hidden" data-testid="hero-dish-frame-mobile">
+          <img
             src="https://static.prod-images.emergentagent.com/jobs/a5fc37c4-a0d0-48b6-893e-aba5ac21f818/images/208185c59e9198cf65bc3ef7727bb7feff32999d9e8ffc003a37c3cc38343317.jpeg"
             alt="Plat signatura Casa Güell"
-            style={{ y: imgY, scale: imgScale }}
-            className="h-full w-full object-cover"
+            className="w-full object-cover"
           />
-          <div className="absolute bottom-4 left-4 rounded-full bg-[#FAF8F5]/90 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-[#111215]">
+          <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-[#111215]/50">
             Fricandó amb Moixernons
-          </div>
-        </motion.div>
+          </p>
+        </div>
+      </div>
+
+      <div
+        className="absolute right-0 top-[16vh] hidden h-[68vh] w-[40vw] md:block lg:w-[36vw]"
+        data-testid="hero-dish-frame"
+      >
+        <motion.img
+          src="https://static.prod-images.emergentagent.com/jobs/a5fc37c4-a0d0-48b6-893e-aba5ac21f818/images/208185c59e9198cf65bc3ef7727bb7feff32999d9e8ffc003a37c3cc38343317.jpeg"
+          alt="Plat signatura Casa Güell"
+          style={{ y: imgY }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="h-full w-full object-cover"
+        />
+        <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-[#111215]/50">
+          Fricandó amb Moixernons
+        </p>
       </div>
     </section>
   );

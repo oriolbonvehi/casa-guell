@@ -5,9 +5,9 @@ export const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer data-testid="site-footer" className="bg-[#111215] px-6 py-16 text-[#FAF8F5] lg:px-10">
-      <div className="mx-auto max-w-[1440px]">
-        <div className="flex flex-col justify-between gap-10 border-b border-white/10 pb-12 lg:flex-row">
+    <footer data-testid="site-footer" className="bg-[#111215] px-6 py-24 text-[#FAF8F5] lg:px-16 lg:py-32">
+      <div className="mx-auto max-w-[1680px]">
+        <div className="flex flex-col justify-between gap-16 border-b border-white/10 pb-16 lg:flex-row">
           <div>
             <div className="flex items-center gap-3">
               <img src="/brand/isotype.png" alt="Casa Güell" className="h-12 w-12" />
@@ -16,7 +16,7 @@ export const Footer = () => {
                 <span className="text-[#FAF8F5]">Güell</span>
               </p>
             </div>
-            <p className="mt-6 max-w-xs font-serif text-2xl leading-snug">{t.footer.tagline}</p>
+            <p className="mt-8 max-w-xs font-serif text-3xl leading-[1.1] tracking-[-0.01em]">{t.footer.tagline}</p>
           </div>
           <div className="flex gap-12">
             <div>

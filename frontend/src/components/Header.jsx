@@ -34,7 +34,7 @@ export const Header = ({ onReserve, onNavVins }) => {
         >
           <img src="/brand/isotype.png" alt="Casa Güell" className="h-11 w-11 flex-shrink-0" />
           <div className="flex flex-col items-start justify-center leading-none">
-            <p className="font-serif text-2xl tracking-tight">
+            <p className="font-serif text-3xl tracking-tight">
               <span className="text-[#1D4ED8]">Casa</span>
               <span className="text-[#111215]">Güell</span>
             </p>

@@ -15,7 +15,7 @@ export const BookingDrawer = ({ open, onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-[90] bg-[#111215]/70 backdrop-blur-sm"
+            className="fixed inset-0 z-[90] bg-[#111215]/70"
             data-testid="booking-drawer-overlay"
           />
           <motion.div
@@ -74,7 +74,7 @@ export const FloatingReserveButton = ({ onClick }) => {
       transition={{ delay: 1.4, duration: 0.6 }}
       data-testid="floating-reserve-button"
       onClick={onClick}
-      className="fixed bottom-6 left-1/2 z-[80] -translate-x-1/2 rounded-full bg-[#1D4ED8] px-7 py-4 font-sans text-sm font-medium text-white shadow-[0_8px_30px_rgba(29,78,216,0.4)] transition-transform hover:scale-105 active:scale-95 sm:left-auto sm:right-8 sm:translate-x-0"
+      className="fixed bottom-6 left-1/2 z-[80] -translate-x-1/2 rounded-full bg-[#1D4ED8] px-7 py-4 font-sans text-sm font-medium text-white transition-transform hover:scale-105 active:scale-95 sm:left-auto sm:right-8 sm:translate-x-0"
     >
       {t.reserveBtn}
     </motion.button>

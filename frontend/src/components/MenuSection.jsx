@@ -25,30 +25,31 @@ export const MenuSection = ({ jumpToVins }) => {
     <section
       id="carta"
       data-testid="menu-section"
-      className={`px-6 py-24 transition-colors duration-500 lg:px-10 lg:py-32 ${
+      className={`px-6 py-32 transition-colors duration-500 lg:px-16 lg:py-48 ${
         isWine ? "bg-[#14161B]" : "bg-[#FAF8F5]"
       }`}
     >
-      <div className="mx-auto max-w-[1440px]">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      <div className="mx-auto max-w-[1680px]">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className={`font-mono text-xs uppercase tracking-[0.25em] text-[#1D4ED8]`}>
-              {t.menu.kicker}
+            <p className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.32em] text-[#111215]/50">
+              <span className="h-2 w-2 flex-shrink-0 bg-[#1D4ED8]" />
+              <span className={isWine ? "text-[#FAF8F5]/50" : ""}>{t.menu.kicker}</span>
             </p>
             <h2
-              className={`mt-4 font-serif text-4xl sm:text-5xl lg:text-6xl ${
+              className={`mt-6 font-serif text-6xl leading-[0.94] tracking-[-0.02em] sm:text-7xl lg:text-8xl ${
                 isWine ? "text-[#FAF8F5]" : "text-[#111215]"
               }`}
               data-testid="menu-title"
             >
               {t.menu.title}
             </h2>
-            <p className={`mt-4 max-w-md text-base ${isWine ? "text-[#FAF8F5]/60" : "text-[#111215]/60"}`}>
+            <p className={`mt-6 max-w-sm text-sm ${isWine ? "text-[#FAF8F5]/50" : "text-[#111215]/55"}`}>
               {t.menu.subtitle}
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2" data-testid="menu-filter-tabs">
+          <div className="flex flex-wrap gap-2 lg:max-w-md lg:justify-end" data-testid="menu-filter-tabs">
             {FOOD_TABS.map((k) => (
               <button
                 key={k}
@@ -90,30 +91,32 @@ export const MenuSection = ({ jumpToVins }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
-              className="mt-14 border-t border-[#E5E2DC]"
+              className="mt-24 border-t border-[#E5E2DC]"
               data-testid="menu-items-list"
             >
               {items.map((item) => (
                 <div
                   key={item.id}
                   data-testid={`menu-item-${item.id}`}
-                  onMouseMove={(e) =>
-                    item.signature && (setMousePos({ x: e.clientX, y: e.clientY }), setHoverItem(item.id))
-                  }
+                  onMouseMove={(e) => {
+                    if (!item.signature) return;
+                    setMousePos({ x: e.clientX, y: e.clientY });
+                    setHoverItem(item.id);
+                  }}
                   onMouseLeave={() => item.signature && setHoverItem(null)}
-                  className="group flex flex-col gap-2 border-b border-[#E5E2DC] py-6 sm:flex-row sm:items-start sm:justify-between sm:gap-8"
+                  className="group flex flex-col gap-2 border-b border-[#E5E2DC] py-8 sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:py-10"
                 >
                   <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="font-serif text-xl text-[#111215] sm:text-2xl">{item.name[lang]}</h3>
+                    <div className="flex items-baseline gap-3">
+                      <h3 className="font-serif text-2xl text-[#111215] lg:text-3xl">{item.name[lang]}</h3>
                       {item.signature && (
-                        <span className="rounded-full bg-[#1D4ED8]/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[#1D4ED8]">
+                        <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#1D4ED8]">
                           {t.menu.hoverHint}
                         </span>
                       )}
                     </div>
-                    <p className="mt-1.5 max-w-lg text-sm text-[#111215]/60">{item.desc[lang]}</p>
-                    <div className="mt-3 flex gap-1.5">
+                    <p className="mt-2 max-w-lg text-sm text-[#111215]/55">{item.desc[lang]}</p>
+                    <div className="mt-4 flex gap-1.5">
                       {item.allergens.map((a) => (
                         <AllergenBadge key={a} code={a} />
                       ))}
@@ -130,10 +133,10 @@ export const MenuSection = ({ jumpToVins }) => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.4 }}
-              className="mt-14"
+              className="mt-24"
               data-testid="wine-list-panel"
             >
-              <div className="flex flex-wrap gap-2 border-b border-white/10 pb-8">
+              <div className="flex flex-wrap gap-2 border-b border-white/10 pb-10">
                 {wineGroups.map((g) => (
                   <button
                     key={g.key}
@@ -150,18 +153,18 @@ export const MenuSection = ({ jumpToVins }) => {
                 ))}
               </div>
 
-              <div className="mt-10 grid grid-cols-1 gap-x-10 lg:grid-cols-2" data-testid="wine-items-list">
+              <div className="mt-14 grid grid-cols-1 gap-x-14 lg:grid-cols-2" data-testid="wine-items-list">
                 {wineGroups
                   .find((g) => g.key === wineTab)
                   ?.wines.map((w, i) => (
                     <div
                       key={i}
                       data-testid={`wine-item-${wineTab}-${i}`}
-                      className="flex items-start justify-between gap-6 border-b border-white/10 py-5"
+                      className="flex items-start justify-between gap-6 border-b border-white/10 py-6"
                     >
                       <div>
-                        <p className="font-serif text-lg text-[#FAF8F5]">{w.name}</p>
-                        <p className="mt-1 text-xs text-[#FAF8F5]/50">
+                        <p className="font-serif text-xl text-[#FAF8F5]">{w.name}</p>
+                        <p className="mt-1.5 text-xs text-[#FAF8F5]/45">
                           {w.region} · {w.grape}
                         </p>
                       </div>
@@ -177,12 +180,12 @@ export const MenuSection = ({ jumpToVins }) => {
       <AnimatePresence>
         {hoverItem && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.85 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
             style={{ left: mousePos.x + 24, top: mousePos.y - 130 }}
-            className="pointer-events-none fixed z-[60] hidden h-44 w-44 overflow-hidden border-2 border-[#FAF8F5] shadow-2xl lg:block"
+            className="pointer-events-none fixed z-[60] hidden h-44 w-44 overflow-hidden border border-[#FAF8F5] lg:block"
             data-testid="menu-hover-photo-card"
           >
             <img
