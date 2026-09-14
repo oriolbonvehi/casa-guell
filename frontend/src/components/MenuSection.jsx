@@ -5,7 +5,7 @@ import { menuItems } from "@/data/menuData";
 import { wineGroups } from "@/data/wineData";
 import { AllergenBadge } from "@/components/AllergenBadge";
 
-const FOOD_TABS = ["picar", "guisats", "peix", "postres"];
+const FOOD_TABS = ["picar", "guisats", "peix", "bogeries", "postres"];
 
 export const MenuSection = ({ jumpToVins }) => {
   const { t, lang } = useLanguage();
@@ -99,30 +99,43 @@ export const MenuSection = ({ jumpToVins }) => {
                   key={item.id}
                   data-testid={`menu-item-${item.id}`}
                   onMouseMove={(e) => {
-                    if (!item.signature) return;
+                    if (!item.image) return;
                     setMousePos({ x: e.clientX, y: e.clientY });
                     setHoverItem(item.id);
                   }}
-                  onMouseLeave={() => item.signature && setHoverItem(null)}
+                  onMouseLeave={() => item.image && setHoverItem(null)}
                   className="group flex flex-col gap-2 border-b border-[#E5E2DC] py-8 sm:flex-row sm:items-start sm:justify-between sm:gap-8 lg:py-10"
                 >
                   <div className="flex-1">
                     <div className="flex items-baseline gap-3">
                       <h3 className="font-serif text-2xl text-[#111215] lg:text-3xl">{item.name[lang]}</h3>
-                      {item.signature && (
-                        <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#1D4ED8]">
+                      {item.image && (
+                        <span className="hidden font-mono text-[10px] uppercase tracking-[0.15em] text-[#1D4ED8] lg:inline">
                           {t.menu.hoverHint}
                         </span>
                       )}
                     </div>
                     <p className="mt-2 max-w-lg text-sm text-[#111215]/55">{item.desc[lang]}</p>
-                    <div className="mt-4 flex gap-1.5">
-                      {item.allergens.map((a) => (
-                        <AllergenBadge key={a} code={a} />
-                      ))}
-                    </div>
+                    {item.image && (
+                      <img
+                        src={item.image}
+                        alt={item.name[lang]}
+                        loading="lazy"
+                        className="mt-4 aspect-[4/3] w-full max-w-xs rounded-sm object-cover lg:hidden"
+                        data-testid={`menu-item-image-mobile-${item.id}`}
+                      />
+                    )}
+                    {item.allergens.length > 0 && (
+                      <div className="mt-4 flex gap-1.5">
+                        {item.allergens.map((a) => (
+                          <AllergenBadge key={a} code={a} />
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <p className="font-mono text-lg text-[#1D4ED8] sm:text-right">{item.price} €</p>
+                  <p className="font-mono text-lg text-[#1D4ED8] sm:text-right">
+                    {item.price} €{item.priceSuffix ? ` / ${item.priceSuffix[lang]}` : ""}
+                  </p>
                 </div>
               ))}
             </motion.div>
@@ -185,7 +198,7 @@ export const MenuSection = ({ jumpToVins }) => {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
             style={{ left: mousePos.x + 24, top: mousePos.y - 130 }}
-            className="pointer-events-none fixed z-[60] hidden h-44 w-44 overflow-hidden border border-[#FAF8F5] lg:block"
+            className="pointer-events-none fixed z-[60] hidden h-56 w-72 overflow-hidden rounded-sm border border-[#FAF8F5] shadow-2xl lg:block"
             data-testid="menu-hover-photo-card"
           >
             <img

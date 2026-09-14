@@ -46,3 +46,10 @@ High-end, brutalist-minimalist single-page website for "Casa Güell", a modern C
 - Añadidos los 5 vídeos restantes (total **8**: v1–v8). Todos transcodificados a H.264 + faststart + yuv420p, **sin audio** (el usuario NO quiere sonido). Array `VIDEOS` en `Hero.jsx` con las 8 rutas.
 - Sin póster: los slots iniciales usan `autoPlay muted playsInline preload="auto"` y faststart para arrancar de inmediato al entrar. Fundido suave (framer-motion opacity) al turnar cada vídeo para evitar parpadeo negro.
 - Originales HEVC en `/app/scripts/hevc_originals/`.
+
+### Actualización 3 — 14 Sep 2026 (Carta: correcciones + Bogeries + El Mercat + foto al pasar)
+- Correcciones carta ('Per Picar'): 'Cansalada Cruixent de Sòria' → 'Torrezno de Sòria' (CA); 'Truita de Gamba' → 'Truita de Camarón' (CA); 'Terrina Cruixent d'Orella' precio 12,50€ → 14,50€.
+- Nueva categoría 'Les Bogeries del Jordi' (ES 'Las Locuras de Jordi') en la carta con 5 platos: Amanida de Tomàquet Eco 18,90€, Orella Cruixent a Baixa Temperatura 14,90€, Selecció de Croquetes de la Setmana 5,50€/ud, Ous Fregits amb Patata Foie i Tòfona 29,80€, Puceta el Nostre Mini Irlandès 4,50€ (postre).
+- Foto al pasar el cursor (desktop): tarjeta flotante para cualquier plato con imagen. En móvil se muestra la foto en línea (thumbnail). Fotos reales del usuario en /app/frontend/public/dishes/: canelons, calamar, flam, xuixo (mapeadas a canelones/calamar-rovellons/flam/xuixo).
+- Nueva sección 'El Mercat' (id=mercat, componente MarketProduct.jsx) con foto real del día del usuario (/dishes/mercat.webp) + galería de 3 fotos reales de stock (Unsplash) + nota 'Pregunta pel producte del dia'. Enlace de nav 'El Mercat' añadido.
+- Verificado por testing_agent (iteration_2.json): 100% frontend, sin bugs, desktop + móvil.

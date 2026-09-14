@@ -7,6 +7,7 @@ const NAV_KEYS = [
   { key: "cuina", id: "filosofia" },
   { key: "carta", id: "carta" },
   { key: "vins", id: "vins" },
+  { key: "mercat", id: "mercat" },
   { key: "ubicacio", id: "ubicacio" },
 ];
 

@@ -34,7 +34,7 @@ export const menuItems = [
   {
     id: "torrezno",
     category: "picar",
-    name: { ca: "Cansalada Cruixent de Sòria", es: "Torrezno de Soria" },
+    name: { ca: "Torrezno de Sòria", es: "Torrezno de Soria" },
     desc: { ca: "Pell cruixent, carn sucosa.", es: "Piel crujiente, carne jugosa." },
     price: "12,50",
     allergens: ["G"],
@@ -98,8 +98,8 @@ export const menuItems = [
   {
     id: "tortilla-camaron",
     category: "picar",
-    name: { ca: "Truita de Gamba", es: "Tortilla de Camarón" },
-    desc: { ca: "Crus, fi i cruixent, estil Cadis.", es: "Fina y crujiente, estilo Cádiz." },
+    name: { ca: "Truita de Camarón", es: "Tortilla de Camarón" },
+    desc: { ca: "La típica i mítica d'Andalusia, fina i cruixent.", es: "La típica y mítica de Andalucía, fina y crujiente." },
     price: "4,90",
     allergens: ["G", "P", "S", "H", "L"],
   },
@@ -116,7 +116,7 @@ export const menuItems = [
     category: "picar",
     name: { ca: "Terrina Cruixent d'Orella", es: "Tarrina Crujiente de Oreja" },
     desc: { ca: "Textura cruixent, sabor de casquería.", es: "Textura crujiente, sabor de casquería." },
-    price: "12,50",
+    price: "14,50",
     allergens: ["S"],
   },
   {
@@ -158,6 +158,7 @@ export const menuItems = [
     desc: { ca: "Recepta familiar de tres generacions.", es: "Receta familiar de tres generaciones." },
     price: "17,90",
     allergens: ["G", "L"],
+    image: "/dishes/canelons.webp",
   },
   {
     id: "capipota",
@@ -202,6 +203,7 @@ export const menuItems = [
     desc: { ca: "Calamar de la llotja, bolet de bosc.", es: "Calamar de lonja, seta de bosque." },
     price: "19,50",
     allergens: ["P", "M", "H"],
+    image: "/dishes/calamar.webp",
   },
   {
     id: "flam",
@@ -211,7 +213,7 @@ export const menuItems = [
     price: "8,50",
     allergens: ["H", "L"],
     signature: true,
-    image: "https://static.prod-images.emergentagent.com/jobs/a5fc37c4-a0d0-48b6-893e-aba5ac21f818/images/c7680c2d38079cd11973dac65e1a9be31bf54ef317c4393fc8c4135bd6d13701.jpeg",
+    image: "/dishes/flam.webp",
   },
   {
     id: "xuixo",
@@ -220,6 +222,7 @@ export const menuItems = [
     desc: { ca: "Crema cuita, cruixent per fora.", es: "Crema cocida, crujiente por fuera." },
     price: "8,50",
     allergens: ["G", "L", "F"],
+    image: "/dishes/xuixo.webp",
   },
   {
     id: "coulant",
@@ -236,6 +239,48 @@ export const menuItems = [
     desc: { ca: "Torrada a la brasa, oli d'oliva verge extra.", es: "Tostada a la brasa, aceite de oliva virgen extra." },
     price: "8,50",
     allergens: ["G", "L", "F"],
+  },
+  {
+    id: "bog-tomaquet",
+    category: "bogeries",
+    name: { ca: "Amanida de Tomàquet Eco", es: "Ensalada de Tomate Eco" },
+    desc: { ca: "Tomàquet ecològic de temporada, oli d'oliva verge extra.", es: "Tomate ecológico de temporada, aceite de oliva virgen extra." },
+    price: "18,90",
+    allergens: [],
+  },
+  {
+    id: "bog-orella",
+    category: "bogeries",
+    name: { ca: "Orella Cruixent a Baixa Temperatura", es: "Oreja Crujiente a Baja Temperatura" },
+    desc: { ca: "Cocció lenta durant hores, acabat cruixent al moment.", es: "Cocción lenta durante horas, acabado crujiente al momento." },
+    price: "14,90",
+    allergens: [],
+  },
+  {
+    id: "bog-croquetes",
+    category: "bogeries",
+    name: { ca: "Selecció de Croquetes de la Setmana", es: "Selección de Croquetas de la Semana" },
+    desc: { ca: "La proposta del Jordi, cada setmana diferent.", es: "La propuesta de Jordi, cada semana diferente." },
+    price: "5,50",
+    priceSuffix: { ca: "ud", es: "ud" },
+    allergens: ["G", "L", "H"],
+  },
+  {
+    id: "bog-ous-foie",
+    category: "bogeries",
+    name: { ca: "Ous Fregits amb Patata, Foie i Tòfona", es: "Huevos Fritos con Patata, Foie y Trufa" },
+    desc: { ca: "Rovell líquid, patata palla, foie i tòfona ratllada.", es: "Yema líquida, patata paja, foie y trufa rallada." },
+    price: "29,80",
+    allergens: ["H"],
+  },
+  {
+    id: "bog-puceta",
+    category: "bogeries",
+    name: { ca: "Puceta, el Nostre Mini Irlandès", es: "Puceta, Nuestro Mini Irlandés" },
+    desc: { ca: "El postre boig de la casa.", es: "El postre loco de la casa." },
+    price: "4,50",
+    allergens: ["L", "G"],
+    dessert: true,
   },
 ];
 

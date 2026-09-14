@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { Philosophy } from "@/components/Philosophy";
 import { MenuSection } from "@/components/MenuSection";
+import { MarketProduct } from "@/components/MarketProduct";
 import { Location } from "@/components/Location";
 import { Footer } from "@/components/Footer";
 import { BookingDrawer, FloatingReserveButton } from "@/components/BookingDrawer";
@@ -22,6 +23,7 @@ function AppContent() {
       <Marquee />
       <Philosophy />
       <MenuSection jumpToVins={vinsSignal} />
+      <MarketProduct />
       <Location />
       <Footer />
       <FloatingReserveButton onClick={() => setDrawerOpen(true)} />
