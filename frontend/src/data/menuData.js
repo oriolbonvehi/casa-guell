@@ -6,6 +6,7 @@ export const menuItems = [
     desc: { ca: "Unitat, servida al natural.", es: "Unidad, servida al natural." },
     price: "5,50",
     allergens: ["M"],
+    image: "/dishes/ostra.webp",
   },
   {
     id: "gilda",
@@ -30,6 +31,7 @@ export const menuItems = [
     desc: { ca: "Recepta d'avia, maionesa casolana.", es: "Receta de abuela, mayonesa casera." },
     price: "9,90",
     allergens: ["P", "H", "L", "S"],
+    image: "/dishes/ensaladilla.webp",
   },
   {
     id: "torrezno",
@@ -54,6 +56,7 @@ export const menuItems = [
     desc: { ca: "Tonyina tallada a ganivet, rovell curat en sal.", es: "Atún cortado a cuchillo, yema curada en sal." },
     price: "18,80",
     allergens: ["H", "P", "M"],
+    image: "/dishes/tartar.webp",
   },
   {
     id: "verduras",
@@ -118,6 +121,7 @@ export const menuItems = [
     desc: { ca: "Textura cruixent, sabor de casquería.", es: "Textura crujiente, sabor de casquería." },
     price: "14,50",
     allergens: ["S"],
+    image: "/dishes/tarrina.webp",
   },
   {
     id: "huevos-papada",
@@ -150,6 +154,7 @@ export const menuItems = [
     desc: { ca: "Massa fina i cruixent, toc cítric.", es: "Masa fina y crujiente, toque cítrico." },
     price: "15,90",
     allergens: ["G", "P", "M"],
+    image: "/dishes/gambitas.webp",
   },
   {
     id: "canelones",
@@ -263,7 +268,7 @@ export const menuItems = [
     desc: { ca: "La proposta del Jordi, cada setmana diferent.", es: "La propuesta de Jordi, cada semana diferente." },
     price: "5,50",
     priceSuffix: { ca: "ud", es: "ud" },
-    allergens: ["G", "L", "H"],
+    allergens: [],
   },
   {
     id: "bog-ous-foie",
@@ -271,7 +276,7 @@ export const menuItems = [
     name: { ca: "Ous Fregits amb Patata, Foie i Tòfona", es: "Huevos Fritos con Patata, Foie y Trufa" },
     desc: { ca: "Rovell líquid, patata palla, foie i tòfona ratllada.", es: "Yema líquida, patata paja, foie y trufa rallada." },
     price: "29,80",
-    allergens: ["H"],
+    allergens: [],
   },
   {
     id: "bog-puceta",
@@ -279,7 +284,7 @@ export const menuItems = [
     name: { ca: "Puceta, el Nostre Mini Irlandès", es: "Puceta, Nuestro Mini Irlandés" },
     desc: { ca: "El postre boig de la casa.", es: "El postre loco de la casa." },
     price: "4,50",
-    allergens: ["L", "G"],
+    allergens: [],
     dessert: true,
   },
 ];

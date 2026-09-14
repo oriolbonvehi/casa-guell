@@ -53,3 +53,8 @@ High-end, brutalist-minimalist single-page website for "Casa Güell", a modern C
 - Foto al pasar el cursor (desktop): tarjeta flotante para cualquier plato con imagen. En móvil se muestra la foto en línea (thumbnail). Fotos reales del usuario en /app/frontend/public/dishes/: canelons, calamar, flam, xuixo (mapeadas a canelones/calamar-rovellons/flam/xuixo).
 - Nueva sección 'El Mercat' (id=mercat, componente MarketProduct.jsx) con foto real del día del usuario (/dishes/mercat.webp) + galería de 3 fotos reales de stock (Unsplash) + nota 'Pregunta pel producte del dia'. Enlace de nav 'El Mercat' añadido.
 - Verificado por testing_agent (iteration_2.json): 100% frontend, sin bugs, desktop + móvil.
+
+### Actualización 4 — 14 Sep 2026 (más fotos de platos + sin alérgenos en Bogeries)
+- Añadidas fotos reales (foto al pasar / inline móvil) a: Ostra Guillardeau, Amanida Russa, Tàrtar de Tonyina, Terrina Cruixent d'Orella, Gambeta de Vidre. En /app/frontend/public/dishes/ (ostra, ensaladilla, tartar, tarrina, gambitas .webp).
+- Quitados los alérgenos de todos los platos de 'Les Bogeries del Jordi' (croquetes, ous-foie, puceta → allergens: []).
+- Verificado: hover-card aparece con nuevas fotos; 0 badges de alérgenos en Bogeries.
