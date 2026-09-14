@@ -86,9 +86,9 @@ export const Philosophy = () => {
           >
             <div className="relative aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1574966740793-953ad374e8fe?crop=entropy&cs=srgb&fm=jpg&q=85"
-                alt="Chef Jordi a la cuina"
-                className="h-full w-full object-cover grayscale transition-[filter] duration-700 hover:grayscale-0"
+                src="/brand/chef_jordi.webp"
+                alt="Jordi, chef i propietari de Casa Güell"
+                className="h-full w-full object-cover object-top grayscale transition-[filter] duration-700 hover:grayscale-0"
                 data-testid="chef-jordi-image"
               />
             </div>

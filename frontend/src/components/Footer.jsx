@@ -10,11 +10,7 @@ export const Footer = () => {
         <div className="flex flex-col justify-between gap-16 border-b border-white/10 pb-16 lg:flex-row">
           <div>
             <div className="flex items-center gap-3">
-              <img src="/brand/isotype.png" alt="Casa Güell" className="h-12 w-12" />
-              <p className="font-serif text-2xl tracking-tight">
-                <span className="text-[#1D4ED8]">Casa</span>
-                <span className="text-[#FAF8F5]">Güell</span>
-              </p>
+              <img src="/brand/logo_white.png" alt="Casa Güell" className="h-8 w-auto" />
             </div>
             <p className="mt-8 max-w-xs font-serif text-3xl leading-[1.1] tracking-[-0.01em]">{t.footer.tagline}</p>
           </div>

@@ -10,12 +10,9 @@ export const content = {
     },
     reserveBtn: "Reservar Taula",
     hero: {
-      kicker: "Restaurant · Sant Martí · Barcelona",
-      lines: ["Cuina de xup-xup,", "producte de mercat", "i memòria."],
-      subtitle:
-        "La tradició catalana sense maquillatge, servida amb mirada contemporània.",
-      cta: "Reservar Taula",
-      scroll: "Descobreix",
+      phrase: "Tradició catalana, sense maquillatge",
+      reserve: "Reservar taula",
+      carta: "La carta",
     },
     marquee:
       "PRODUCTE DE MERCAT — XUP-XUP REAL — SANT MARTÍ — MEMÒRIA CATALANA — SENSE DRECERES — ",
@@ -128,12 +125,9 @@ export const content = {
     },
     reserveBtn: "Reservar Mesa",
     hero: {
-      kicker: "Restaurante · Sant Martí · Barcelona",
-      lines: ["Cocina a fuego lento,", "producto de mercado", "y memoria."],
-      subtitle:
-        "La tradición catalana sin maquillaje, servida con mirada contemporánea.",
-      cta: "Reservar Mesa",
-      scroll: "Descubre",
+      phrase: "Tradición catalana, sin maquillaje",
+      reserve: "Reservar mesa",
+      carta: "La carta",
     },
     marquee:
       "PRODUCTO DE MERCADO — FUEGO LENTO REAL — SANT MARTÍ — MEMORIA CATALANA — SIN ATAJOS — ",

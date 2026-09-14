@@ -31,3 +31,13 @@ High-end, brutalist-minimalist single-page website for "Casa Güell", a modern C
 - P1: Swap stock/AI team & interior photography for real venue photos when available.
 - P2: Add newsletter/contact form if requested (currently no backend endpoints exist).
 - P2: SEO meta tags / Open Graph image for social sharing.
+
+---
+## Actualización — 14 Sep 2026 (Hero de vídeo + logo oficial)
+- **Hero rediseñado**: fondo de vídeos 9:16 rotativos (3 columnas en escritorio, 1 en móvil). Al acabar un vídeo se turna al siguiente, ciclando por todos. Solo muestra el logo "Casa Güell", la frase "Tradició catalana, sense maquillatge" y dos botones ("Reservar taula" / "La carta"). Overlay oscuro para legibilidad.
+- **Vídeos**: recibidos 3 (faltan 4). Eran HEVC/H.265 (no reproducibles en Chrome/Firefox) → transcodificados a **H.264 + faststart + yuv420p, sin audio** con ffmpeg. Guardados en `/app/frontend/public/videos/v1..v3.mp4`. Originales HEVC en `/app/scripts/hevc_originals/`. Para añadir los 4 restantes: transcodificar igual y ampliar el array `VIDEOS` en `Hero.jsx` (el paso de rotación = nº de columnas, ya soporta 7).
+- **Logo oficial**: procesado desde el PNG transparente del usuario a 3 variantes en `/app/frontend/public/brand/`: `logo_transparent.png` (Casa azul + Güell negro, header), `logo_hero.png` (Casa azul + Güell crema, sobre vídeo), `logo_white.png` (blanco, footer). Script: `/app/scripts/process_logo.py`.
+- **Sección Equipo eliminada** (no hay fotos del equipo): quitada de `App.js` y del nav ("equip"). `Team.jsx` queda sin usar.
+- **Foto real del chef Jordi** integrada en Filosofía (`/app/frontend/public/brand/chef_jordi.webp`).
+- Pendiente del usuario: 4 vídeos adicionales + fotos de los platos (para la carta).
+- NOTA: la reproducción de vídeo no es verificable en Chromium headless (sin códec H.264 propietario), pero el formato es estándar web y reproduce en navegadores reales.

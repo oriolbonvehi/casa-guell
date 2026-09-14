@@ -7,7 +7,6 @@ const NAV_KEYS = [
   { key: "cuina", id: "filosofia" },
   { key: "carta", id: "carta" },
   { key: "vins", id: "vins" },
-  { key: "equip", id: "equip" },
   { key: "ubicacio", id: "ubicacio" },
 ];
 
@@ -30,18 +29,13 @@ export const Header = ({ onReserve, onNavVins }) => {
         <button
           data-testid="logo-home-button"
           onClick={() => scrollTo("hero")}
-          className="flex items-center gap-3"
+          className="flex items-center"
         >
-          <img src="/brand/isotype.png" alt="Casa Güell" className="h-11 w-11 flex-shrink-0" />
-          <div className="flex flex-col items-start justify-center leading-none">
-            <p className="font-serif text-3xl tracking-tight">
-              <span className="text-[#1D4ED8]">Casa</span>
-              <span className="text-[#111215]">Güell</span>
-            </p>
-            <span className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[#111215]/55">
-              {t.locationTag}
-            </span>
-          </div>
+          <img
+            src="/brand/logo_transparent.png"
+            alt="Casa Güell"
+            className="h-7 w-auto lg:h-8"
+          />
         </button>
 
         <nav className="hidden items-center gap-8 lg:flex">
