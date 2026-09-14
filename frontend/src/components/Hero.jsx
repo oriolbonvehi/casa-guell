@@ -3,7 +3,16 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
 // Fondo de vídeos 9:16. Se irán turnando conforme cada uno acaba.
-const VIDEOS = ["/videos/v1.mp4", "/videos/v2.mp4", "/videos/v3.mp4"];
+const VIDEOS = [
+  "/videos/v1.mp4",
+  "/videos/v2.mp4",
+  "/videos/v3.mp4",
+  "/videos/v4.mp4",
+  "/videos/v5.mp4",
+  "/videos/v6.mp4",
+  "/videos/v7.mp4",
+  "/videos/v8.mp4",
+];
 
 const VideoSlot = ({ start, step }) => {
   const [idx, setIdx] = useState(start % VIDEOS.length);
@@ -19,7 +28,7 @@ const VideoSlot = ({ start, step }) => {
   }, [idx]);
 
   return (
-    <video
+    <motion.video
       key={idx}
       ref={ref}
       src={VIDEOS[idx]}
@@ -27,6 +36,9 @@ const VideoSlot = ({ start, step }) => {
       muted
       playsInline
       preload="auto"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       onEnded={() => setIdx((i) => (i + step) % VIDEOS.length)}
       className="h-full w-full object-cover"
       data-testid={`hero-video-slot-${start}`}

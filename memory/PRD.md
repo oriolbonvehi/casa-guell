@@ -41,3 +41,8 @@ High-end, brutalist-minimalist single-page website for "Casa Güell", a modern C
 - **Foto real del chef Jordi** integrada en Filosofía (`/app/frontend/public/brand/chef_jordi.webp`).
 - Pendiente del usuario: 4 vídeos adicionales + fotos de los platos (para la carta).
 - NOTA: la reproducción de vídeo no es verificable en Chromium headless (sin códec H.264 propietario), pero el formato es estándar web y reproduce en navegadores reales.
+
+### Actualización 2 — 14 Sep 2026 (8 vídeos + reproducción fluida)
+- Añadidos los 5 vídeos restantes (total **8**: v1–v8). Todos transcodificados a H.264 + faststart + yuv420p, **sin audio** (el usuario NO quiere sonido). Array `VIDEOS` en `Hero.jsx` con las 8 rutas.
+- Sin póster: los slots iniciales usan `autoPlay muted playsInline preload="auto"` y faststart para arrancar de inmediato al entrar. Fundido suave (framer-motion opacity) al turnar cada vídeo para evitar parpadeo negro.
+- Originales HEVC en `/app/scripts/hevc_originals/`.
