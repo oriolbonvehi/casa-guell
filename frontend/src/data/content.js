@@ -36,7 +36,7 @@ export const content = {
           text: "Guisats que couen hores, fons que reposen dies. La tècnica moderna serveix la memòria, no la substitueix.",
         },
       ],
-      tagline: "Vine a probar la cuina de l'àvia. Que no t'ho expliquin.",
+      tagline: "Vine a provar la cuina de l'àvia. Que no t'ho expliquin.",
       chefName: "Jordi — Chef Executiu",
     },
     menu: {
@@ -52,7 +52,7 @@ export const content = {
         postres: "Postres Casolans",
         vins: "Carta de Vins",
       },
-      allergenNote: "Al·lergens indicats a cada plat",
+      allergenNote: "Al·lèrgens indicats a cada plat",
       hoverHint: "Passa el cursor per veure el plat",
       allergens: {
         F: "Fruits secs",
@@ -232,6 +232,124 @@ export const content = {
     footer: {
       tagline: "Cocina a fuego lento, producto de mercado y memoria.",
       rights: "Todos los derechos reservados.",
+      madeWith: "Sant Martí, Barcelona",
+    },
+  },
+  en: {
+    locationTag: "Sant Martí, BCN",
+    nav: {
+      cuina: "The Kitchen",
+      carta: "Menu",
+      vins: "Wines",
+      mercat: "The Market",
+      ubicacio: "Location",
+    },
+    reserveBtn: "Book a Table",
+    hero: {
+      phrase: "Catalan tradition, with nothing to hide",
+      reserve: "Book a table",
+      carta: "The menu",
+    },
+    marquee:
+      "MARKET PRODUCE — SLOW COOKING — SANT MARTÍ — CATALAN MEMORY — NO SHORTCUTS — ",
+    philosophy: {
+      kicker: "01 — Our Philosophy",
+      title: "Thirty years back to the essence",
+      chapters: [
+        {
+          n: "01",
+          title: "The origin",
+          text: "Jordi started thirty years ago in kitchens where time was the most expensive ingredient. Today he returns to that slowness, with no pretensions and no shortcuts.",
+        },
+        {
+          n: "02",
+          title: "The market",
+          text: "Every morning, before the kitchen opens, the market decides the day's menu. The produce leads; we simply follow it.",
+        },
+        {
+          n: "03",
+          title: "Slow cooking",
+          text: "Stews that simmer for hours, stocks that rest for days. Modern technique serves memory, it does not replace it.",
+        },
+      ],
+      tagline: "Come and taste grandma's cooking. Don't just take our word for it.",
+      chefName: "Jordi — Executive Chef",
+    },
+    menu: {
+      kicker: "02 — The Menu",
+      title: "Our works of art \"The Menu\"",
+      subtitle:
+        "Every dish, made with love and passion, just as it leaves our kitchen.",
+      tabs: {
+        picar: "To Share",
+        guisats: "Stews & Stocks",
+        peix: "Fish & Meat",
+        bogeries: "Jordi's Wild Ideas",
+        postres: "Homemade Desserts",
+        vins: "Wine List",
+      },
+      allergenNote: "Allergens listed on each dish",
+      hoverHint: "Hover to see the dish",
+      allergens: {
+        F: "Nuts",
+        G: "Gluten",
+        H: "Egg",
+        L: "Dairy",
+        M: "Mollusc",
+        MZ: "Mustard",
+        P: "Fish",
+        S: "Sulphites",
+      },
+    },
+    wine: {
+      kicker: "A night in the cellar",
+      title: "Wine List",
+      subtitle: "Catalan appellations and an Iberian selection, glass by glass.",
+      groups: {
+        blancs: "White Wines",
+        rosats: "Rosé Wines",
+        negres: "Red Wines",
+        escumosos: "Sparkling",
+        copes: "Wines by the Glass",
+      },
+      byGlass: "per glass",
+    },
+    market: {
+      kicker: "Catch of the day",
+      title: "The market rules",
+      text: "Every morning we head down to the fish market and pick the best fish and seafood of the day. There is no fixed market menu: ask for the catch of the day, as it changes with whatever the sea offers.",
+      note: "Ask for the catch of the day",
+    },
+    team: {
+      kicker: "03 — The Team",
+      title: "The soul behind the stove",
+      quote:
+        "Great cooking is 20% technique and 80% the people behind it.",
+    },
+    location: {
+      kicker: "04 — Location",
+      title: "Sant Martí awaits",
+      addressLabel: "Address",
+      address: "Carrer de Castella, 1, Sant Martí, Barcelona",
+      mapLink: "Open in Google Maps",
+      hoursLabel: "Opening hours",
+      hours: [
+        { days: "Wednesday — Saturday", time: "1:00 PM — 12:00 AM" },
+        { days: "Sunday", time: "1:00 PM — 6:00 PM" },
+        { days: "Monday & Tuesday", time: "Closed" },
+      ],
+      phoneLabel: "Phone",
+      followLabel: "Follow us",
+    },
+    booking: {
+      title: "Book a Table",
+      subtitle: "Confirm your table at Casa Güell in just a few seconds.",
+      phoneFallback: "Prefer to call?",
+      close: "Close",
+    },
+    footer: {
+      tagline: "Slow-cooked food, market produce and memory.",
+      rights: "All rights reserved.",
       madeWith: "Sant Martí, Barcelona",
     },
   },

@@ -9,7 +9,8 @@ export const LanguageProvider = ({ children }) => {
   const value = useMemo(
     () => ({
       lang,
-      toggleLang: () => setLang((l) => (l === "ca" ? "es" : "ca")),
+      setLanguage: (l) => setLang(l),
+      toggleLang: () => setLang((l) => (l === "ca" ? "es" : l === "es" ? "en" : "ca")),
       t: content[lang],
     }),
     [lang]

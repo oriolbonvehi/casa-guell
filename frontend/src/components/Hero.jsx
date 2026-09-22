@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
-// Fondo de vídeos 9:16. Se irán turnando conforme cada uno acaba.
-const VIDEOS = [
+// Fondo de vídeos 9:16. Versión ligera para mòbil, versió completa per a escriptori.
+const VIDEOS_DESKTOP = [
   "/videos/v1.mp4",
   "/videos/v2.mp4",
   "/videos/v3.mp4",
@@ -12,37 +12,64 @@ const VIDEOS = [
   "/videos/v6.mp4",
   "/videos/v7.mp4",
   "/videos/v8.mp4",
+  "/videos/v9.mp4",
 ];
+const VIDEOS_MOBILE = VIDEOS_DESKTOP.map((s) => s.replace("/videos/", "/videos/mobile/"));
 
-const VideoSlot = ({ start, step }) => {
-  const [idx, setIdx] = useState(start % VIDEOS.length);
-  const ref = useRef(null);
+// Double-buffered video slot: preloads the next clip so transitions are seamless.
+const VideoSlot = ({ start, step, sources, testId }) => {
+  const refs = [useRef(null), useRef(null)];
+  const idxRef = useRef([start % sources.length, (start + step) % sources.length]);
+  const [visible, setVisible] = useState(0);
 
   useEffect(() => {
-    const v = ref.current;
-    if (v) {
-      v.currentTime = 0;
-      const p = v.play();
+    const v0 = refs[0].current;
+    if (v0) {
+      const p = v0.play();
       if (p && p.catch) p.catch(() => {});
     }
-  }, [idx]);
+    const v1 = refs[1].current;
+    if (v1) v1.load(); // buffer next clip ahead of time
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleEnded = (buf) => {
+    const nextBuf = buf === 0 ? 1 : 0;
+    const nv = refs[nextBuf].current;
+    if (nv) {
+      nv.currentTime = 0;
+      const p = nv.play();
+      if (p && p.catch) p.catch(() => {});
+    }
+    setVisible(nextBuf);
+    // Queue the following clip into the buffer that just finished.
+    const following = (idxRef.current[nextBuf] + step) % sources.length;
+    idxRef.current[buf] = following;
+    const ov = refs[buf].current;
+    if (ov) {
+      ov.src = sources[following];
+      ov.load();
+    }
+  };
 
   return (
-    <motion.video
-      key={idx}
-      ref={ref}
-      src={VIDEOS[idx]}
-      autoPlay
-      muted
-      playsInline
-      preload="auto"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      onEnded={() => setIdx((i) => (i + step) % VIDEOS.length)}
-      className="h-full w-full object-cover"
-      data-testid={`hero-video-slot-${start}`}
-    />
+    <>
+      {[0, 1].map((buf) => (
+        <video
+          key={buf}
+          ref={refs[buf]}
+          src={sources[idxRef.current[buf]]}
+          autoPlay={buf === 0}
+          muted
+          playsInline
+          preload="auto"
+          onEnded={() => handleEnded(buf)}
+          style={{ opacity: visible === buf ? 1 : 0 }}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out"
+          data-testid={buf === 0 ? testId : undefined}
+        />
+      ))}
+    </>
   );
 };
 
@@ -61,19 +88,19 @@ export const Hero = ({ onReserve }) => {
       {/* Video wall — 3 columns on desktop */}
       <div className="absolute inset-0 hidden md:grid md:grid-cols-3">
         <div className="relative overflow-hidden border-r border-black/40">
-          <VideoSlot start={0} step={3} />
+          <VideoSlot start={0} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-0" />
         </div>
         <div className="relative overflow-hidden border-r border-black/40">
-          <VideoSlot start={1} step={3} />
+          <VideoSlot start={1} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-1" />
         </div>
         <div className="relative overflow-hidden">
-          <VideoSlot start={2} step={3} />
+          <VideoSlot start={2} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-2" />
         </div>
       </div>
 
-      {/* Video wall — single column on mobile */}
+      {/* Video wall — single column on mobile (lightweight files) */}
       <div className="absolute inset-0 md:hidden">
-        <VideoSlot start={0} step={1} />
+        <VideoSlot start={0} step={1} sources={VIDEOS_MOBILE} testId="hero-video-mobile" />
       </div>
 
       {/* Legibility overlay */}

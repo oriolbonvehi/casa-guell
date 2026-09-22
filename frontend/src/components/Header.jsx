@@ -12,8 +12,9 @@ const NAV_KEYS = [
 ];
 
 export const Header = ({ onReserve, onNavVins }) => {
-  const { t, lang, toggleLang } = useLanguage();
+  const { t, lang, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
+  const LANGS = ["ca", "es", "en"];
 
   const scrollTo = (id) => {
     setOpen(false);
@@ -53,16 +54,24 @@ export const Header = ({ onReserve, onNavVins }) => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button
+          <div
             data-testid="language-toggle"
-            onClick={toggleLang}
-            className="hidden items-center gap-1.5 rounded-full border border-[#E5E2DC] px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-[#111215]/80 transition-colors hover:border-[#1D4ED8] hover:text-[#1D4ED8] sm:flex"
+            className="hidden items-center gap-1.5 rounded-full border border-[#E5E2DC] px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-[#111215]/80 sm:flex"
           >
             <Globe className="h-3.5 w-3.5" strokeWidth={1.75} />
-            <span className={lang === "ca" ? "text-[#1D4ED8]" : ""}>CA</span>
-            <span className="text-[#111215]/30">/</span>
-            <span className={lang === "es" ? "text-[#1D4ED8]" : ""}>ES</span>
-          </button>
+            {LANGS.map((l, i) => (
+              <span key={l} className="flex items-center gap-1.5">
+                <button
+                  data-testid={`lang-${l}`}
+                  onClick={() => setLanguage(l)}
+                  className={`transition-colors hover:text-[#1D4ED8] ${lang === l ? "text-[#1D4ED8]" : ""}`}
+                >
+                  {l}
+                </button>
+                {i < LANGS.length - 1 && <span className="text-[#111215]/30">/</span>}
+              </span>
+            ))}
+          </div>
 
           <button
             data-testid="header-reserve-button"
@@ -102,16 +111,24 @@ export const Header = ({ onReserve, onNavVins }) => {
                   {t.nav[n.key]}
                 </button>
               ))}
-              <button
+              <div
                 data-testid="mobile-language-toggle"
-                onClick={toggleLang}
                 className="mt-4 flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#111215]/70"
               >
                 <Globe className="h-3.5 w-3.5" />
-                <span className={lang === "ca" ? "text-[#1D4ED8]" : ""}>CA</span>
-                <span>/</span>
-                <span className={lang === "es" ? "text-[#1D4ED8]" : ""}>ES</span>
-              </button>
+                {LANGS.map((l, i) => (
+                  <span key={l} className="flex items-center gap-2">
+                    <button
+                      data-testid={`mobile-lang-${l}`}
+                      onClick={() => setLanguage(l)}
+                      className={lang === l ? "text-[#1D4ED8]" : ""}
+                    >
+                      {l}
+                    </button>
+                    {i < LANGS.length - 1 && <span>/</span>}
+                  </span>
+                ))}
+              </div>
               <button
                 data-testid="mobile-reserve-button"
                 onClick={() => {
