@@ -121,6 +121,7 @@ export const MenuSection = ({ jumpToVins }) => {
                         src={item.image}
                         alt={item.name[lang]}
                         loading="lazy"
+                        style={{ objectPosition: item.objectPosition || "center" }}
                         className="mt-4 aspect-[4/3] w-full max-w-xs rounded-sm object-cover lg:hidden"
                         data-testid={`menu-item-image-mobile-${item.id}`}
                       />
@@ -206,6 +207,7 @@ export const MenuSection = ({ jumpToVins }) => {
             <img
               src={items.find((i) => i.id === hoverItem)?.image}
               alt=""
+              style={{ objectPosition: items.find((i) => i.id === hoverItem)?.objectPosition || "center" }}
               className="h-full w-full object-cover"
             />
           </motion.div>

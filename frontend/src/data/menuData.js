@@ -40,7 +40,7 @@ export const menuItems = [
     },
     price: "16,50",
     allergens: ["G"],
-    image: "/dishes/paletilla.webp",
+    image: "/dishes/jamon.webp",
   },
   {
     id: "ensaladilla",
@@ -79,6 +79,7 @@ export const menuItems = [
     },
     price: "14,90",
     allergens: ["P", "G"],
+    image: "/dishes/anxoas.webp",
   },
   {
     id: "tartar-atun",
@@ -124,6 +125,7 @@ export const menuItems = [
     },
     price: "12,00",
     allergens: ["G"],
+    image: "/dishes/berenjena.jpg",
   },
   {
     id: "carpaccio",
@@ -197,6 +199,7 @@ export const menuItems = [
     price: "8,50",
     allergens: ["H", "S"],
     image: "/dishes/bravas.webp",
+    objectPosition: "center 82%",
   },
   {
     id: "oreja",
@@ -310,6 +313,7 @@ export const menuItems = [
     allergens: ["G", "F", "S"],
     signature: true,
     image: "/dishes/capipota.jpg",
+    objectPosition: "center 82%",
   },
   {
     id: "albondigas",
@@ -479,6 +483,7 @@ export const menuItems = [
     },
     price: "14,90",
     allergens: [],
+    image: "/dishes/orella.png",
   },
   {
     id: "bog-croquetes",

@@ -77,3 +77,9 @@ High-end, brutalist-minimalist single-page website for "Casa Güell", a modern C
 - **Vídeo v9** (rap video) añadido a la rotación (desktop /videos/v9.mp4 + mobile). Total 9 vídeos. Originales en /app/scripts/hevc_originals/.
 - **Fotos nuevas**: Torrezno (/dishes/torrezno.webp), Croquetes bogeries (/dishes/croquetes.webp), Torrija (/dishes/torrija.webp), Coulant (/dishes/coulant.webp).
 - Verificado por testing_agent iteration_3.json: 100% (trilingüe, fotos, doble búfer móvil, reserva). Nota: reproducción de vídeo no verificable en Chromium headless (sin códec H.264), formato estándar OK en navegadores reales.
+
+### Actualización 8 — 22 Sep 2026 (reencuadre + reemplazo + fotos nuevas)
+- Paletilla: foto reemplazada por /dishes/jamon.webp.
+- Cap i Pota y Bravas: reencuadre hacia abajo para ver el plato → campo opcional `objectPosition: "center 82%"` en menuData, aplicado en MenuSection a la tarjeta hover (desktop) y a la imagen inline (móvil) vía style.
+- Fotos nuevas añadidas: Trilogia d'Anxoves (/dishes/anxoas.webp), Xips d'Albergínia (/dishes/berenjena.jpg), Orella Cruixent bog-orella (/dishes/orella.png).
+- Verificado por DOM: bravas objectPosition 'center 82%', paletilla=jamon.webp, anchoas=anxoas.webp, berenjena=berenjena.jpg (200 OK todas).
