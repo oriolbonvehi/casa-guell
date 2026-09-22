@@ -63,3 +63,9 @@ High-end, brutalist-minimalist single-page website for "Casa Güell", a modern C
 - Foto añadida a: Patates Braves "Casa Güell" (/dishes/bravas.webp).
 - 2 platos nuevos en 'Les Bogeries del Jordi': 'Espatlleta de Xai / Espaldita de Cordero' (/dishes/espaldita.webp) y 'La Bailona · Cheesecake de Mató de Montserrat' (/dishes/bailona.webp). SIN alérgenos. PRECIO PENDIENTE (price:null) — el usuario debe facilitarlos. El precio no se renderiza cuando es null (lógica condicional en MenuSection).
 - Galería sección 'El Mercat' actualizada con 2 fotos reales del usuario (/dishes/mercat2.webp IMG_0704, /dishes/mercat3.webp IMG_5552) + 1 stock.
+
+### Actualización 6 — 22 Sep 2026 (precios, textos y fotos reales)
+- Precios bogeries: Espaldita de Cordero 32,90€; La Bailona 9,50€.
+- Filosofía: eliminadas las 3 métricas (100%/AM/0). Nueva frase (t.philosophy.tagline): CA "Vine a probar la cuina de l'àvia. Que no t'ho expliquin." / ES "Ven a probar la cocina de la abuela. Que no te lo cuenten." (data-testid=philosophy-tagline).
+- Carta: título "Digitalitzada, no maquillada" → CA "Les nostres obres d'art \"La Carta\"" / ES "Nuestras obras de arte \"La Carta\"". Subtítulo → CA "Cada plat, amb amor i passió tal com surt de la nostra cuina." / ES "Cada plato, con amor y pasión...".
+- Fotos reales nuevas: Gilda (/dishes/gilda.webp), Paleta de Pernil (/dishes/paletilla.webp), Mandonguilles (/dishes/mandonguilles.webp). Reemplazadas las imágenes generadas por reales: Cap i Pota (/dishes/capipota.jpg) y Fricandó (/dishes/fricando.jpg).

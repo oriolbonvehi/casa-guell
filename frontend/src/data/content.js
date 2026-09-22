@@ -36,18 +36,14 @@ export const content = {
           text: "Guisats que couen hores, fons que reposen dies. La tècnica moderna serveix la memòria, no la substitueix.",
         },
       ],
-      metrics: [
-        { value: "100%", label: "Xup-xup real" },
-        { value: "AM", label: "Mercat diari" },
-        { value: "0", label: "Dreceres industrials" },
-      ],
+      tagline: "Vine a probar la cuina de l'àvia. Que no t'ho expliquin.",
       chefName: "Jordi — Chef Executiu",
     },
     menu: {
       kicker: "02 — La Carta",
-      title: "Digitalitzada, no maquillada",
+      title: "Les nostres obres d'art \"La Carta\"",
       subtitle:
-        "Cada plat, cada preu i cada al·lergen tal com surt de la nostra cuina.",
+        "Cada plat, amb amor i passió tal com surt de la nostra cuina.",
       tabs: {
         picar: "Per Picar",
         guisats: "Guisats i Fons",
@@ -158,18 +154,14 @@ export const content = {
           text: "Guisos que cuecen horas, fondos que reposan días. La técnica moderna sirve a la memoria, no la sustituye.",
         },
       ],
-      metrics: [
-        { value: "100%", label: "Fuego lento real" },
-        { value: "AM", label: "Mercado diario" },
-        { value: "0", label: "Atajos industriales" },
-      ],
+      tagline: "Ven a probar la cocina de la abuela. Que no te lo cuenten.",
       chefName: "Jordi — Chef Ejecutivo",
     },
     menu: {
       kicker: "02 — La Carta",
-      title: "Digitalizada, no maquillada",
+      title: "Nuestras obras de arte \"La Carta\"",
       subtitle:
-        "Cada plato, cada precio y cada alérgeno tal como sale de nuestra cocina.",
+        "Cada plato, con amor y pasión tal como sale de nuestra cocina.",
       tabs: {
         picar: "Para Picar",
         guisats: "Guisos y Fondos",

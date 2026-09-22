@@ -59,22 +59,16 @@ export const Philosophy = () => {
             ))}
             <div className="border-t border-[#E5E2DC]" />
 
-            <div className="mt-20 flex flex-wrap gap-x-16 gap-y-10">
-              {t.philosophy.metrics.map((m, i) => (
-                <motion.div
-                  key={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeUp}
-                  transition={{ delay: i * 0.08 }}
-                  data-testid={`metric-badge-${i}`}
-                >
-                  <p className="font-serif text-4xl text-[#1D4ED8] lg:text-5xl">{m.value}</p>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[#111215]/50">{m.label}</p>
-                </motion.div>
-              ))}
-            </div>
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="mt-16 max-w-2xl font-serif text-3xl italic leading-tight tracking-tight text-[#111215] lg:text-4xl"
+              data-testid="philosophy-tagline"
+            >
+              {t.philosophy.tagline}
+            </motion.p>
           </div>
 
           <motion.div

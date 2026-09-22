@@ -15,6 +15,7 @@ export const menuItems = [
     desc: { ca: "Anxova, oliva i guindilla en vinagre.", es: "Anchoa, oliva y guindilla en vinagre." },
     price: "3,80",
     allergens: ["P", "S"],
+    image: "/dishes/gilda.webp",
   },
   {
     id: "paletilla",
@@ -23,6 +24,7 @@ export const menuItems = [
     desc: { ca: "Tallada a mà, greix daurat.", es: "Cortada a mano, grasa dorada." },
     price: "16,50",
     allergens: ["G"],
+    image: "/dishes/paletilla.webp",
   },
   {
     id: "ensaladilla",
@@ -174,7 +176,7 @@ export const menuItems = [
     price: "16,80",
     allergens: ["G", "F", "S"],
     signature: true,
-    image: "https://static.prod-images.emergentagent.com/jobs/a5fc37c4-a0d0-48b6-893e-aba5ac21f818/images/e9672356c23e5dc6ab66cf34128a0039701912799d471518c271ac51ae6b2776.jpeg",
+    image: "/dishes/capipota.jpg",
   },
   {
     id: "albondigas",
@@ -183,6 +185,7 @@ export const menuItems = [
     desc: { ca: "Mar i muntanya, fons de peix i marisc.", es: "Mar y montaña, fondo de pescado y marisco." },
     price: "17,90",
     allergens: ["G", "F", "S", "M"],
+    image: "/dishes/mandonguilles.webp",
   },
   {
     id: "fricando",
@@ -192,7 +195,7 @@ export const menuItems = [
     price: "18,50",
     allergens: ["G", "F", "S"],
     signature: true,
-    image: "https://static.prod-images.emergentagent.com/jobs/a5fc37c4-a0d0-48b6-893e-aba5ac21f818/images/779131e42d8b4180bb2eba947d36a88dab2bf1308a4b8019b23bf8b7d43e744b.jpeg",
+    image: "/dishes/fricando.jpg",
   },
   {
     id: "solomillo",
@@ -293,7 +296,7 @@ export const menuItems = [
     category: "bogeries",
     name: { ca: "Espatlleta de Xai", es: "Espaldita de Cordero" },
     desc: { ca: "Rostida a baixa temperatura, patates i pebrots del padró.", es: "Asada a baja temperatura, patatas y pimientos del padrón." },
-    price: null,
+    price: "32,90",
     allergens: [],
     image: "/dishes/espaldita.webp",
   },
@@ -302,7 +305,7 @@ export const menuItems = [
     category: "bogeries",
     name: { ca: "La Bailona · Cheesecake de Mató de Montserrat", es: "La Bailona · Cheesecake de Mató de Montserrat" },
     desc: { ca: "El nostre cheesecake amb mató de Montserrat.", es: "Nuestro cheesecake con requesón (mató) de Montserrat." },
-    price: null,
+    price: "9,50",
     allergens: [],
     dessert: true,
     image: "/dishes/bailona.webp",
