@@ -133,9 +133,11 @@ export const MenuSection = ({ jumpToVins }) => {
                       </div>
                     )}
                   </div>
-                  <p className="font-mono text-lg text-[#1D4ED8] sm:text-right">
-                    {item.price} €{item.priceSuffix ? ` / ${item.priceSuffix[lang]}` : ""}
-                  </p>
+                  {item.price && (
+                    <p className="font-mono text-lg text-[#1D4ED8] sm:text-right">
+                      {item.price} €{item.priceSuffix ? ` / ${item.priceSuffix[lang]}` : ""}
+                    </p>
+                  )}
                 </div>
               ))}
             </motion.div>

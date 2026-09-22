@@ -113,6 +113,7 @@ export const menuItems = [
     desc: { ca: "Salsa brava de la casa, punt de picant.", es: "Salsa brava de la casa, punto de picante." },
     price: "8,50",
     allergens: ["H", "S"],
+    image: "/dishes/bravas.webp",
   },
   {
     id: "oreja",
@@ -286,6 +287,25 @@ export const menuItems = [
     price: "4,50",
     allergens: [],
     dessert: true,
+  },
+  {
+    id: "bog-espaldita",
+    category: "bogeries",
+    name: { ca: "Espatlleta de Xai", es: "Espaldita de Cordero" },
+    desc: { ca: "Rostida a baixa temperatura, patates i pebrots del padró.", es: "Asada a baja temperatura, patatas y pimientos del padrón." },
+    price: null,
+    allergens: [],
+    image: "/dishes/espaldita.webp",
+  },
+  {
+    id: "bog-bailona",
+    category: "bogeries",
+    name: { ca: "La Bailona · Cheesecake de Mató de Montserrat", es: "La Bailona · Cheesecake de Mató de Montserrat" },
+    desc: { ca: "El nostre cheesecake amb mató de Montserrat.", es: "Nuestro cheesecake con requesón (mató) de Montserrat." },
+    price: null,
+    allergens: [],
+    dessert: true,
+    image: "/dishes/bailona.webp",
   },
 ];
 

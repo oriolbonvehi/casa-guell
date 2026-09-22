@@ -7,9 +7,9 @@ const fadeUp = {
 };
 
 const GALLERY = [
-  "https://images.unsplash.com/photo-1668335508689-fdbea12a6d69?crop=entropy&cs=srgb&fm=jpg&q=85&w=900",
+  "/dishes/mercat2.webp",
+  "/dishes/mercat3.webp",
   "https://images.unsplash.com/photo-1689590735625-760f8b2fa77a?crop=entropy&cs=srgb&fm=jpg&q=85&w=900",
-  "https://images.unsplash.com/photo-1548587468-971ebe4c8c3b?crop=entropy&cs=srgb&fm=jpg&q=85&w=900",
 ];
 
 export const MarketProduct = () => {

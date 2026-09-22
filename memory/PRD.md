@@ -58,3 +58,8 @@ High-end, brutalist-minimalist single-page website for "Casa Güell", a modern C
 - Añadidas fotos reales (foto al pasar / inline móvil) a: Ostra Guillardeau, Amanida Russa, Tàrtar de Tonyina, Terrina Cruixent d'Orella, Gambeta de Vidre. En /app/frontend/public/dishes/ (ostra, ensaladilla, tartar, tarrina, gambitas .webp).
 - Quitados los alérgenos de todos los platos de 'Les Bogeries del Jordi' (croquetes, ous-foie, puceta → allergens: []).
 - Verificado: hover-card aparece con nuevas fotos; 0 badges de alérgenos en Bogeries.
+
+### Actualización 5 — 22 Sep 2026 (lote fotos + 2 bogeries nuevas)
+- Foto añadida a: Patates Braves "Casa Güell" (/dishes/bravas.webp).
+- 2 platos nuevos en 'Les Bogeries del Jordi': 'Espatlleta de Xai / Espaldita de Cordero' (/dishes/espaldita.webp) y 'La Bailona · Cheesecake de Mató de Montserrat' (/dishes/bailona.webp). SIN alérgenos. PRECIO PENDIENTE (price:null) — el usuario debe facilitarlos. El precio no se renderiza cuando es null (lógica condicional en MenuSection).
+- Galería sección 'El Mercat' actualizada con 2 fotos reales del usuario (/dishes/mercat2.webp IMG_0704, /dishes/mercat3.webp IMG_5552) + 1 stock.
