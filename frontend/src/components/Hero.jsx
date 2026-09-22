@@ -16,6 +16,22 @@ const VIDEOS_DESKTOP = [
 ];
 const VIDEOS_MOBILE = VIDEOS_DESKTOP.map((s) => s.replace("/videos/", "/videos/mobile/"));
 
+// Only mount the layout that matches the viewport so heavy desktop clips
+// are never fetched on mobile (and vice-versa).
+const useIsDesktop = () => {
+  const query = "(min-width: 768px)";
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== "undefined" && window.matchMedia(query).matches
+  );
+  useEffect(() => {
+    const mq = window.matchMedia(query);
+    const handler = (e) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return isDesktop;
+};
+
 // Double-buffered video slot: preloads the next clip so transitions are seamless.
 const VideoSlot = ({ start, step, sources, testId }) => {
   const refs = [useRef(null), useRef(null)];
@@ -75,6 +91,7 @@ const VideoSlot = ({ start, step, sources, testId }) => {
 
 export const Hero = ({ onReserve }) => {
   const { t } = useLanguage();
+  const isDesktop = useIsDesktop();
 
   const goToCarta = () =>
     document.getElementById("carta")?.scrollIntoView({ behavior: "smooth" });
@@ -85,23 +102,25 @@ export const Hero = ({ onReserve }) => {
       data-testid="hero-section"
       className="relative h-[100svh] min-h-[600px] w-full overflow-hidden bg-[#0B0B0C]"
     >
-      {/* Video wall — 3 columns on desktop */}
-      <div className="absolute inset-0 hidden md:grid md:grid-cols-3">
-        <div className="relative overflow-hidden border-r border-black/40">
-          <VideoSlot start={0} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-0" />
+      {isDesktop ? (
+        /* Video wall — 3 columns on desktop */
+        <div className="absolute inset-0 grid grid-cols-3">
+          <div className="relative overflow-hidden border-r border-black/40">
+            <VideoSlot start={0} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-0" />
+          </div>
+          <div className="relative overflow-hidden border-r border-black/40">
+            <VideoSlot start={1} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-1" />
+          </div>
+          <div className="relative overflow-hidden">
+            <VideoSlot start={2} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-2" />
+          </div>
         </div>
-        <div className="relative overflow-hidden border-r border-black/40">
-          <VideoSlot start={1} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-1" />
+      ) : (
+        /* Video wall — single lightweight column on mobile */
+        <div className="absolute inset-0">
+          <VideoSlot start={0} step={1} sources={VIDEOS_MOBILE} testId="hero-video-mobile" />
         </div>
-        <div className="relative overflow-hidden">
-          <VideoSlot start={2} step={3} sources={VIDEOS_DESKTOP} testId="hero-video-slot-2" />
-        </div>
-      </div>
-
-      {/* Video wall — single column on mobile (lightweight files) */}
-      <div className="absolute inset-0 md:hidden">
-        <VideoSlot start={0} step={1} sources={VIDEOS_MOBILE} testId="hero-video-mobile" />
-      </div>
+      )}
 
       {/* Legibility overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
